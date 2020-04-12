@@ -9,7 +9,7 @@ const Users = () => {
       image:'http://www.xwebtools.com/dummy-image/600x400/000/FFF',
       places:3
     }
-  ]
+  ];
   return <UserList items={USERS}/>;
 };
 
