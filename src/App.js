@@ -13,8 +13,12 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact><Users /></Route>
-        <Route path="/places/new" exact><NewPlace /></Route>
+        <Route path="/" exact>
+          <Users />
+        </Route>
+        <Route path="/places/new" exact>
+          <NewPlace />
+        </Route>
         <Redirect to="/" />
       </Switch>
     </Router>
