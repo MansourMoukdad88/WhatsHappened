@@ -5,8 +5,8 @@ const Users = () => {
   const USERS = [
     {
       id:'u1',
-      name:'Mansour Almoukdad',
-      image:'http://www.xwebtools.com/dummy-image/600x400/000/FFF',
+      name:'Adam Smith',
+      image:'https://fwcb.cfans.umn.edu/sites/fwcb.cfans.umn.edu/files/photo_a_landon.jpg',
       places:3
     }
   ];
