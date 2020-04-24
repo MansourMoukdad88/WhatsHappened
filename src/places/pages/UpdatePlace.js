@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
+import Card from '../../shared/components/UIElements/Card';
 import {VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH} from '../../shared/util/validators';
 import {useForm} from '../../shared/hooks/form-hook';
 import './PlaceForm.css';
@@ -22,7 +23,7 @@ const DUMMY_PLACES = [
   },
   {
     id:'p2',
-    title: 'Empire State Building',
+    title: 'Emp!!! State Building',
     description: 'One of the most famous shy scrapers in the world!',
     imageUrl: "https://res.cloudinary.com/drbgxq5pt/image/fetch/f_auto,q_auto:eco/https%3A%2F%2Fwww.kitano.com%2Fresourcefiles%2Fsnippet-main-img%2Fempire-state-building-in-new-york-top.jpg%3Fmimdevice%3Dmobile",
     address: "20 W 34th St, New York, NY 10001, United States",
@@ -55,18 +56,19 @@ const UpdatePlace = () => {
   const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId);
 
   useEffect(() => {
-    
-    setFormData({
-      title: {
-        value: identifiedPlace.title,
-        isValid: true
-      },
-      description: {
-        value: identifiedPlace.description,
-        isValid: true
-      }
-    }, 
-    true);
+    if(identifiedPlace) {
+      setFormData({
+        title: {
+          value: identifiedPlace.title,
+          isValid: true
+        },
+        description: {
+          value: identifiedPlace.description,
+          isValid: true
+        }
+      }, 
+      true);
+    }
     setIsLoading(false);
   }, [setFormData, identifiedPlace]);
 
@@ -80,7 +82,9 @@ const UpdatePlace = () => {
   if(!identifiedPlace) {
     return (
       <div className="center">
-        <h2>Could not find place!</h2>
+        <Card>
+          <h2>Could not find place!</h2>
+        </Card>
       </div>
     );
   }
