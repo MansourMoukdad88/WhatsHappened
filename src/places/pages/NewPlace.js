@@ -36,16 +36,16 @@ const NewPlace = (props) => {
       title:{
       value: '',
       isValid: false
+      },
+      description: {
+        value: '',
+        isValid: false
+      },
+      address: {
+        value: '',
+        isValid: false
       }
-    },
-    description: {
-      value: '',
-      isValid: false
-    },
-    address: {
-      value: '',
-      isValid: false
-    },
+      },
     isValid: false
   });
 
